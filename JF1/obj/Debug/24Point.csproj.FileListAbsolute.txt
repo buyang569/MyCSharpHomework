@@ -1,0 +1,7 @@
+D:\OneDrive\CSharp\JF1\My24point\JF1\bin\Debug\JF1.exe.config
+D:\OneDrive\CSharp\JF1\My24point\JF1\bin\Debug\JF1.exe
+D:\OneDrive\CSharp\JF1\My24point\JF1\bin\Debug\JF1.pdb
+D:\OneDrive\CSharp\JF1\My24point\JF1\obj\Debug\24Point.csprojAssemblyReference.cache
+D:\OneDrive\CSharp\JF1\My24point\JF1\obj\Debug\24Point.csproj.CoreCompileInputs.cache
+D:\OneDrive\CSharp\JF1\My24point\JF1\obj\Debug\JF1.exe
+D:\OneDrive\CSharp\JF1\My24point\JF1\obj\Debug\JF1.pdb
