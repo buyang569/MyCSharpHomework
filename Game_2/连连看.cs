@@ -67,43 +67,58 @@ namespace Game_2
             {
                 Two = lb;
                 lb.BackColor = Color.Yellow;
-                if (One.Text.Equals(Two.Text))
+                if (One.Location!=Two.Location)
                 {
-                    MyPoint KaiShi = new MyPoint((One.Location.X - 65) / 50, (One.Location.Y - 80) / 50);
-                    MyPoint JieShu = new MyPoint((Two.Location.X - 65) / 50, (Two.Location.Y - 80) / 50);
-                    MyPoint p = new MyPoint(KaiShi.X, KaiShi.Y);
-                    p.parent = null;
-                    for (int i = 0; i < 9; i++)
+                    if (One.Text.Equals(Two.Text))
                     {
-                        for (int j = 0; j < 16; j++)
+                        MyPoint KaiShi = new MyPoint((One.Location.X - 65) / 50, (One.Location.Y - 80) / 50);
+                        MyPoint JieShu = new MyPoint((Two.Location.X - 65) / 50, (Two.Location.Y - 80) / 50);
+                        MyPoint p = new MyPoint(KaiShi.X, KaiShi.Y);
+                        p.parent = null;
+                        for (int i = 0; i < 9; i++)
                         {
-                            if (arr[j, i] == -1)
+                            for (int j = 0; j < 16; j++)
                             {
-                                arr[j, i] = 0;
-                            }
+                                if (arr[j, i] == -1)
+                                {
+                                    arr[j, i] = 0;
+                                }
 
+                            }
                         }
-                    }
-                    arr[KaiShi.X, KaiShi.Y] = 0;
-                    arr[JieShu.X, JieShu.Y] = 0;
-                    if (BFS(p, arr, JieShu))
-                    {
-                        One.Visible = false;
-                        Two.Visible = false;
-                    }
-                    else if ((KaiShi.X == 13 && JieShu.X == 13 && (Math.Abs(KaiShi.Y - JieShu.Y) < 100)) || (KaiShi.Y == 6 && JieShu.Y == 6 && (Math.Abs(KaiShi.X - JieShu.X) < 100)))//补丁
-                    {
-                        One.Visible = false;
-                        Two.Visible = false;
+                        arr[KaiShi.X, KaiShi.Y] = 0;
+                        arr[JieShu.X, JieShu.Y] = 0;
+                        if (BFS(p, arr, JieShu))
+                        {
+                            One.Visible = false;
+                            Two.Visible = false;
+                        }
+                        else if ((KaiShi.X == 13 && JieShu.X == 13 && (Math.Abs(KaiShi.Y - JieShu.Y) < 100)) || (KaiShi.Y == 6 && JieShu.Y == 6 && (Math.Abs(KaiShi.X - JieShu.X) < 100)))//补丁
+                        {
+                            One.Visible = false;
+                            Two.Visible = false;
+                        }
+                        else
+                        {
+                            arr[KaiShi.X, KaiShi.Y] = 1;
+                            arr[JieShu.X, JieShu.Y] = 1;
+                            One.BackColor = Color.White;
+                            Two.BackColor = Color.White;
+                        }
                     }
                     else
                     {
-                        arr[KaiShi.X, KaiShi.Y] = 1;
-                        arr[JieShu.X, JieShu.Y] = 1;
                         One.BackColor = Color.White;
                         Two.BackColor = Color.White;
                     }
                 }
+                else
+                {
+                    i = 0;
+                    One.BackColor = Color.White;
+                    Two.BackColor = Color.White;
+                }
+                
                 i = 0;
             }
             //lb.Visible = false;
@@ -131,12 +146,16 @@ namespace Game_2
         }
         private void Restart_Click(object sender, EventArgs e)
         {
-
+            foreach (Label lab in this.Controls.OfType<Label>())
+            {
+                lab.Visible = false;
+            }
+            label1.Visible = true;
         }
 
         #region 寻找通路
         /// <summary>
-        /// 迷宫程序移植，计算亮点是否存在通路
+        /// 迷宫程序移植，运用BFS，计算两点是否存在通路
         /// </summary>
         public class MyPoint
         {
@@ -151,7 +170,7 @@ namespace Game_2
             }
         }
 
-
+        
 
         static bool BFS(MyPoint p, int[,] data, MyPoint js)
         {
