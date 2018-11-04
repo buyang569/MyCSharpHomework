@@ -12,3 +12,7 @@ E:\Code\Cshap\MyCSharpHomework\JF1\obj\Debug\24Point.csprojAssemblyReference.cac
 E:\Code\Cshap\MyCSharpHomework\JF1\obj\Debug\24Point.csproj.CoreCompileInputs.cache
 E:\Code\Cshap\MyCSharpHomework\JF1\obj\Debug\JF1.exe
 E:\Code\Cshap\MyCSharpHomework\JF1\obj\Debug\JF1.pdb
+C:\Users\ICBC\Source\Repos\buyang569\MyCSharpHomework\JF1\bin\Debug\JF1.exe.config
+C:\Users\ICBC\Source\Repos\buyang569\MyCSharpHomework\JF1\obj\Debug\JF1.exe
+C:\Users\ICBC\Source\Repos\buyang569\MyCSharpHomework\JF1\obj\Debug\JF1.pdb
+C:\Users\ICBC\Source\Repos\buyang569\MyCSharpHomework\JF1\obj\Debug\24Point.csprojResolveAssemblyReference.cache

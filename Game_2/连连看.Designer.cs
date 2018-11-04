@@ -51,6 +51,7 @@
             resources.ApplyResources(this.Restart, "Restart");
             this.Restart.Name = "Restart";
             this.Restart.UseVisualStyleBackColor = true;
+            this.Restart.Click += new System.EventHandler(this.Restart_Click);
             // 
             // 连连看
             // 

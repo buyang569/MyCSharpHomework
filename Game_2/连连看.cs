@@ -7,13 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-/*
- * 2018年11月4日
- * 可以消除周边的但是中间的不能消除
- * 未实现随机生成字符功能
- * 
- * 
- */
+
 namespace Game_2
 {
     public partial class 连连看 : Form
@@ -27,18 +21,31 @@ namespace Game_2
         {
 
         }
-
+        static int[] arr1 = new int[80];
         private void InitControl()
         {
+            int iSeed = 10;
+            Random ro = new Random(iSeed);
+            long tick = DateTime.Now.Ticks;
+            Random ran = new Random((int)(tick & 0xffffffffL) | (int)(tick >> 32));
+
+            for (int i = 0; i < 80; i += 2)
+            {
+                arr1[i] = ran.Next(1, 20);
+                arr1[i + 1] = arr1[i];
+            }
+
             for (int i = 0; i < 7; i++)
             {
                 for (int j = 0; j < 14; j++)
                 {
+                    int m = ran.Next(0, 19);
                     Label lb = new Label();
                     lb.Click += new System.EventHandler(Label_Click);
                     lb.Location = new System.Drawing.Point(65 + 50 * j, 80 + 50 * i);
                     lb.Size = new Size(40, 30);
-                    lb.Text = "123";
+                    lb.Text = arr1[m].ToString();
+                    lb.BackColor = Color.White;
                     lb.TextAlign = ContentAlignment.MiddleCenter;
                     this.Controls.Add(lb);
                 }
@@ -49,18 +56,18 @@ namespace Game_2
         static int[,] arr = new int[16, 9];
         private void Label_Click(object sender, EventArgs e)
         {
-            Label lb =  (Label)sender;
-            if(i==0)//第一次点击
+            Label lb = (Label)sender;
+            if (i == 0)//第一次点击
             {
                 One = lb;
                 lb.BackColor = Color.Yellow;
                 i = 1;
             }
-            else if(i==1)
+            else if (i == 1)
             {
                 Two = lb;
                 lb.BackColor = Color.Yellow;
-                if(One.Text.Equals(Two.Text))
+                if (One.Text.Equals(Two.Text))
                 {
                     MyPoint KaiShi = new MyPoint((One.Location.X - 65) / 50, (One.Location.Y - 80) / 50);
                     MyPoint JieShu = new MyPoint((Two.Location.X - 65) / 50, (Two.Location.Y - 80) / 50);
@@ -74,26 +81,34 @@ namespace Game_2
                             {
                                 arr[j, i] = 0;
                             }
-                                
+
                         }
                     }
-                    arr[KaiShi.X + 1, KaiShi.Y + 1] = 0;
-                    arr[JieShu.X + 1, JieShu.Y + 1] = 0;
+                    arr[KaiShi.X, KaiShi.Y] = 0;
+                    arr[JieShu.X, JieShu.Y] = 0;
                     if (BFS(p, arr, JieShu))
+                    {
+                        One.Visible = false;
+                        Two.Visible = false;
+                    }
+                    else if ((KaiShi.X == 13 && JieShu.X == 13 && (Math.Abs(KaiShi.Y - JieShu.Y) < 100)) || (KaiShi.Y == 6 && JieShu.Y == 6 && (Math.Abs(KaiShi.X - JieShu.X) < 100)))//补丁
                     {
                         One.Visible = false;
                         Two.Visible = false;
                     }
                     else
                     {
-                        arr[KaiShi.X + 1, KaiShi.Y + 1] = 1;
-                        arr[JieShu.X + 1, JieShu.Y + 1] = 1;
+                        arr[KaiShi.X, KaiShi.Y] = 1;
+                        arr[JieShu.X, JieShu.Y] = 1;
+                        One.BackColor = Color.White;
+                        Two.BackColor = Color.White;
                     }
                 }
                 i = 0;
             }
             //lb.Visible = false;
         }
+
         private void Start_Click(object sender, EventArgs e)
         {
             InitControl();
@@ -114,7 +129,10 @@ namespace Game_2
                 }
             }
         }
+        private void Restart_Click(object sender, EventArgs e)
+        {
 
+        }
 
         #region 寻找通路
         /// <summary>
@@ -132,7 +150,10 @@ namespace Game_2
                 this.Y = b;
             }
         }
-        static bool BFS(MyPoint p, int[,] data,MyPoint js)
+
+
+
+        static bool BFS(MyPoint p, int[,] data, MyPoint js)
         {
             Queue<MyPoint> q = new Queue<MyPoint>();
             data[0, 0] = -1;
