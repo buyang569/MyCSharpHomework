@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Game_1
+namespace Game_2
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Game_1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new 考眼力());
+            Application.Run(new 连连看());
         }
     }
 }

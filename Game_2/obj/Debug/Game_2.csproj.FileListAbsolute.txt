@@ -1,0 +1,13 @@
+E:\Code\Cshap\MyCSharpHomework\Game_2\obj\Debug\Game_2.csprojAssemblyReference.cache
+E:\Code\Cshap\MyCSharpHomework\Game_2\obj\Debug\Game_2.连连看.resources
+E:\Code\Cshap\MyCSharpHomework\Game_2\obj\Debug\Game_2.Properties.Resources.resources
+E:\Code\Cshap\MyCSharpHomework\Game_2\obj\Debug\Game_2.连连看.zh-CN.resources
+E:\Code\Cshap\MyCSharpHomework\Game_2\obj\Debug\Game_2.csproj.GenerateResource.cache
+E:\Code\Cshap\MyCSharpHomework\Game_2\obj\Debug\Game_2.csproj.CoreCompileInputs.cache
+E:\Code\Cshap\MyCSharpHomework\Game_2\bin\Debug\Game_2.exe.config
+E:\Code\Cshap\MyCSharpHomework\Game_2\bin\Debug\Game_2.exe
+E:\Code\Cshap\MyCSharpHomework\Game_2\bin\Debug\Game_2.pdb
+E:\Code\Cshap\MyCSharpHomework\Game_2\bin\Debug\zh-CN\Game_2.resources.dll
+E:\Code\Cshap\MyCSharpHomework\Game_2\obj\Debug\zh-CN\Game_2.resources.dll
+E:\Code\Cshap\MyCSharpHomework\Game_2\obj\Debug\Game_2.exe
+E:\Code\Cshap\MyCSharpHomework\Game_2\obj\Debug\Game_2.pdb

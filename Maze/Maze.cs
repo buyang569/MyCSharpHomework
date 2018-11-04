@@ -113,15 +113,15 @@ namespace Maze
             {
                 for (int j = 0; j < H; j++)
                 {
-                    if (saveMaze[i, j] == "S")
+                    if (saveMaze[j, i] == "S")
                     {
-                        saveMaze[i, j] = "0";
+                        saveMaze[j, i] = "0";
                         KaiShi.x = j;
                         KaiShi.y = i;
                     }
-                    if (saveMaze[i, j] == "E")
+                    if (saveMaze[j, i] == "E")
                     {
-                        saveMaze[i, j] = "0";
+                        saveMaze[j, i] = "0";
                         JieShu.x = j;
                         JieShu.y = i;
                     }
@@ -138,8 +138,7 @@ namespace Maze
 
             MyPoint p = new MyPoint(KaiShi.x, KaiShi.y);
             p.parent = null;
-            BFS(p, arr);
-
+            bool a = BFS(p, arr);
             foreach (WeiZhi res in JiLu)
             {
                 arr[res.x, res.y] = 2;
@@ -205,7 +204,7 @@ namespace Maze
         }
 
 
-        static void BFS(MyPoint p, int[,] data)
+        static bool BFS(MyPoint p, int[,] data)
         {
             Queue<MyPoint> q = new Queue<MyPoint>();
             data[0, 0] = -1;
@@ -227,6 +226,7 @@ namespace Maze
                                     WritePath(qp); //递归输出路径
                                     Console.Write("({0},{1})", JieShu.x, JieShu.y);
                                     Console.WriteLine();
+                                    return true;
                                 }
                                 else
                                 {
@@ -240,6 +240,7 @@ namespace Maze
                     }
                 }
             }
+            return false;
         }
 
 

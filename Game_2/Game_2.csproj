@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1A7B6841-745D-4FC8-BF24-2C4BF556B5B0}</ProjectGuid>
+    <ProjectGuid>{3F177985-AECE-49BE-BCD1-020D954D9243}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Game_1</RootNamespace>
-    <AssemblyName>Game_1</AssemblyName>
+    <RootNamespace>Game_2</RootNamespace>
+    <AssemblyName>Game_2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,16 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="考眼力.cs">
+    <Compile Include="连连看.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="考眼力.Designer.cs">
-      <DependentUpon>考眼力.cs</DependentUpon>
+    <Compile Include="连连看.Designer.cs">
+      <DependentUpon>连连看.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="考眼力.resx">
-      <DependentUpon>考眼力.cs</DependentUpon>
+    <EmbeddedResource Include="连连看.resx">
+      <DependentUpon>连连看.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="连连看.zh-CN.resx">
+      <DependentUpon>连连看.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

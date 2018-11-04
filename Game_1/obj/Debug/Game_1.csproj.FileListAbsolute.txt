@@ -8,3 +8,13 @@ D:\Onedrive\CSharp\JF1\My24point\Game_1\obj\Debug\Game_1.csproj.GenerateResource
 D:\Onedrive\CSharp\JF1\My24point\Game_1\obj\Debug\Game_1.csproj.CoreCompileInputs.cache
 D:\Onedrive\CSharp\JF1\My24point\Game_1\obj\Debug\Game_1.exe
 D:\Onedrive\CSharp\JF1\My24point\Game_1\obj\Debug\Game_1.pdb
+E:\Code\Cshap\MyCSharpHomework\Game_1\bin\Debug\Game_1.exe.config
+E:\Code\Cshap\MyCSharpHomework\Game_1\bin\Debug\Game_1.exe
+E:\Code\Cshap\MyCSharpHomework\Game_1\bin\Debug\Game_1.pdb
+E:\Code\Cshap\MyCSharpHomework\Game_1\obj\Debug\Game_1.csprojAssemblyReference.cache
+E:\Code\Cshap\MyCSharpHomework\Game_1\obj\Debug\Game_1.Form1.resources
+E:\Code\Cshap\MyCSharpHomework\Game_1\obj\Debug\Game_1.Properties.Resources.resources
+E:\Code\Cshap\MyCSharpHomework\Game_1\obj\Debug\Game_1.csproj.GenerateResource.cache
+E:\Code\Cshap\MyCSharpHomework\Game_1\obj\Debug\Game_1.csproj.CoreCompileInputs.cache
+E:\Code\Cshap\MyCSharpHomework\Game_1\obj\Debug\Game_1.exe
+E:\Code\Cshap\MyCSharpHomework\Game_1\obj\Debug\Game_1.pdb

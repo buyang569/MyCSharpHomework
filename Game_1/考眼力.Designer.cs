@@ -1,6 +1,6 @@
 ﻿namespace Game_1
 {
-    partial class Form1
+    partial class 考眼力
     {
         /// <summary>
         /// 必需的设计器变量。
