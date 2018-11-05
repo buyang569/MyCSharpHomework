@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Start = new System.Windows.Forms.Button();
             this.Restart = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -54,16 +53,10 @@
             this.Restart.UseVisualStyleBackColor = true;
             this.Restart.Click += new System.EventHandler(this.Restart_Click);
             // 
-            // textBox1
-            // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.Name = "textBox1";
-            // 
             // 连连看
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Restart);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.label1);
@@ -79,7 +72,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.Button Restart;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
