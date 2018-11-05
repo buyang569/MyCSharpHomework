@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace Game_2
 {
@@ -21,30 +22,40 @@ namespace Game_2
         {
 
         }
-        static int[] arr1 = new int[80];
+        static int[] arr1 = new int[98];
         private void InitControl()
         {
-            int iSeed = 10;
-            Random ro = new Random(iSeed);
             long tick = DateTime.Now.Ticks;
             Random ran = new Random((int)(tick & 0xffffffffL) | (int)(tick >> 32));
 
-            for (int i = 0; i < 80; i += 2)
+            for (int i = 0; i < 98; i += 2)
             {
                 arr1[i] = ran.Next(1, 20);
                 arr1[i + 1] = arr1[i];
             }
+            int[] arr2 = new int[98];
 
+            ArrayList list = new ArrayList();
+            for (int i = 0; i < 98; i++)
+            {
+                int number = ran.Next(0, 98);
+                while (list.Contains(number))
+                {
+                    number = ran.Next(0, 98);
+                }
+                list.Add(number);
+            }
+            int temp = 0;
             for (int i = 0; i < 7; i++)
             {
                 for (int j = 0; j < 14; j++)
                 {
-                    int m = ran.Next(0, 19);
+                    
                     Label lb = new Label();
                     lb.Click += new System.EventHandler(Label_Click);
                     lb.Location = new System.Drawing.Point(65 + 50 * j, 80 + 50 * i);
                     lb.Size = new Size(40, 30);
-                    lb.Text = arr1[m].ToString();
+                    lb.Text = arr1[(int)list[temp++]].ToString();
                     lb.BackColor = Color.White;
                     lb.TextAlign = ContentAlignment.MiddleCenter;
                     this.Controls.Add(lb);
@@ -93,11 +104,15 @@ namespace Game_2
                             One.Visible = false;
                             Two.Visible = false;
                         }
-                        else if ((KaiShi.X == 13 && JieShu.X == 13 && (Math.Abs(KaiShi.Y - JieShu.Y) < 100)) || (KaiShi.Y == 6 && JieShu.Y == 6 && (Math.Abs(KaiShi.X - JieShu.X) < 100)))//补丁
-                        {
-                            One.Visible = false;
-                            Two.Visible = false;
-                        }
+                        //else if (   (KaiShi.X == 13 && JieShu.X == 13 && 
+                        //            (Math.Abs(KaiShi.Y - JieShu.Y) < 100)) || 
+                        //            (KaiShi.Y == 6 && JieShu.Y == 6 && 
+                        //            (Math.Abs(KaiShi.X - JieShu.X) < 100)))//补丁
+                        //{
+                        //    One.Visible = false;
+                        //    Two.Visible = false;
+                        //}
+                        //
                         else
                         {
                             arr[KaiShi.X, KaiShi.Y] = 1;

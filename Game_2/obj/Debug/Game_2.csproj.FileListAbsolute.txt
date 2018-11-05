@@ -23,3 +23,16 @@ C:\Users\ICBC\Source\Repos\buyang569\MyCSharpHomework\Game_2\obj\Debug\Game_2.Pr
 C:\Users\ICBC\Source\Repos\buyang569\MyCSharpHomework\Game_2\obj\Debug\Game_2.连连看.zh-CN.resources
 C:\Users\ICBC\Source\Repos\buyang569\MyCSharpHomework\Game_2\obj\Debug\Game_2.csproj.GenerateResource.Cache
 C:\Users\ICBC\Source\Repos\buyang569\MyCSharpHomework\Game_2\obj\Debug\zh-CN\Game_2.resources.dll
+D:\Code\MyCSharpHomework\Game_2\bin\Debug\Game_2.exe.config
+D:\Code\MyCSharpHomework\Game_2\bin\Debug\Game_2.exe
+D:\Code\MyCSharpHomework\Game_2\bin\Debug\Game_2.pdb
+D:\Code\MyCSharpHomework\Game_2\bin\Debug\zh-CN\Game_2.resources.dll
+D:\Code\MyCSharpHomework\Game_2\obj\Debug\Game_2.csprojAssemblyReference.cache
+D:\Code\MyCSharpHomework\Game_2\obj\Debug\Game_2.连连看.resources
+D:\Code\MyCSharpHomework\Game_2\obj\Debug\Game_2.Properties.Resources.resources
+D:\Code\MyCSharpHomework\Game_2\obj\Debug\Game_2.连连看.zh-CN.resources
+D:\Code\MyCSharpHomework\Game_2\obj\Debug\Game_2.csproj.GenerateResource.cache
+D:\Code\MyCSharpHomework\Game_2\obj\Debug\Game_2.csproj.CoreCompileInputs.cache
+D:\Code\MyCSharpHomework\Game_2\obj\Debug\zh-CN\Game_2.resources.dll
+D:\Code\MyCSharpHomework\Game_2\obj\Debug\Game_2.exe
+D:\Code\MyCSharpHomework\Game_2\obj\Debug\Game_2.pdb
