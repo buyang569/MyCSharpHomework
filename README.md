@@ -7,5 +7,3 @@
 BFS/DFS代码来源：https://blog.csdn.net/dream_dt/article/details/79275777
 ## 考眼力小游戏 ##
 实现所需功能，改进暂时没有。
-## 连连看小游戏 ##
-使用label的点击事件生成连连看地图，将两点作为迷宫起止点，使用迷宫程序验证是否相连，消除label

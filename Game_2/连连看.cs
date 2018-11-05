@@ -33,7 +33,8 @@ namespace Game_2
                 arr1[i] = ran.Next(1, 20);
                 arr1[i + 1] = arr1[i];
             }
-            //生成不重复的0-97
+            int[] arr2 = new int[98];
+
             ArrayList list = new ArrayList();
             for (int i = 0; i < 98; i++)
             {
