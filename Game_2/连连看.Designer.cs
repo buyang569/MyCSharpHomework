@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(连连看));
             this.label1 = new System.Windows.Forms.Label();
             this.Start = new System.Windows.Forms.Button();
             this.Restart = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -53,10 +56,20 @@
             this.Restart.UseVisualStyleBackColor = true;
             this.Restart.Click += new System.EventHandler(this.Restart_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.Name = "label2";
+            // 
             // 连连看
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.Restart);
             this.Controls.Add(this.Start);
             this.Controls.Add(this.label1);
@@ -72,6 +85,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Start;
         private System.Windows.Forms.Button Restart;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

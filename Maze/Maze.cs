@@ -31,14 +31,15 @@ namespace Maze
             public int y;
             public int di;
         }
-        static int H = 10;//定义行数
+        static int H = 9;//定义行数
+        static int L = 16;//定义列
         static List<WeiZhi> JiLu = new List<WeiZhi>();
 
         static bool DuQu(out String[,] output)
         #region//读取文件中的迷宫
         {
             string strLine;
-            String[,] duru = new String[H, H];
+            String[,] duru = new String[H, L];
             try
             {
                 FileStream aFile = new FileStream("maze.txt", FileMode.Open);
@@ -104,12 +105,12 @@ namespace Maze
             
             KaiShi = new WeiZhi();
             JieShu = new WeiZhi();
-            String[,] saveMaze = new String[H, H];
-            int[,] arr = new int[H, H];
+            String[,] saveMaze = new String[H, L];
+            int[,] arr = new int[H, L];
 
             DuQu(out saveMaze);
             //寻找起止点
-            for (int i = 0; i < H; i++)
+            for (int i = 0; i < L; i++)
             {
                 for (int j = 0; j < H; j++)
                 {
@@ -129,7 +130,7 @@ namespace Maze
             }
             for (int i = 0; i < H; i++)
             {
-                for (int j = 0; j < H; j++)
+                for (int j = 0; j < L; j++)
                 {
                     arr[i, j] = int.Parse(saveMaze[i, j]);
                 }
@@ -149,7 +150,7 @@ namespace Maze
             Console.WriteLine();
             for (int i = 0; i < H; i++)
             {
-                for (int j = 0; j < H; j++)
+                for (int j = 0; j < L; j++)
                 {
                     if (arr[i, j] == 1)
                     {
@@ -176,7 +177,7 @@ namespace Maze
             {
                 for (int j = -1; j < 2; j++)
                 {
-                    if ((qp.X + i >= 0) && (qp.X + i < H) && (qp.Y + j >= 0) && (qp.Y + j < H) && (qp.X + i == qp.X || qp.Y == qp.Y + j)) //是否越界 只遍历上下左右
+                    if ((qp.X + i >= 0) && (qp.X + i < L) && (qp.Y + j >= 0) && (qp.Y + j < H) && (qp.X + i == qp.X || qp.Y == qp.Y + j)) //是否越界 只遍历上下左右
                     {
                         if (data[qp.X + i, qp.Y + j] == 0)
                         {
@@ -216,13 +217,12 @@ namespace Maze
                 {
                     for (int j = -1; j < 2; j++)
                     {
-                        if ((qp.X + i >= 0) && (qp.X + i < H) && (qp.Y + j >= 0) && (qp.Y + j < H) && (qp.X + i == qp.X || qp.Y == qp.Y + j)) //是否越界 只遍历上下左右
+                        if ((qp.X + i >= 0) && (qp.X + i < H) && (qp.Y + j >= 0) && (qp.Y + j < L) && (qp.X + i == qp.X || qp.Y == qp.Y + j)) //是否越界 只遍历上下左右
                         {
                             if (data[qp.X + i, qp.Y + j] == 0)
                             {
                                 if (qp.X + i == JieShu.x && qp.Y + j == JieShu.y)  //是否为终点
                                 {
-                                    Console.Write("BFS:(0,0)-->");
                                     WritePath(qp); //递归输出路径
                                     Console.Write("({0},{1})", JieShu.x, JieShu.y);
                                     Console.WriteLine();
