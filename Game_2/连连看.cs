@@ -72,7 +72,7 @@ namespace Game_2
         static private Label One, Two;
         static int[,] Maze = new int[9, 16];
         static MyPoint KaiShi, JieShu;
-
+        static int jishu = 49;
         private void Label_Click(object sender, EventArgs e)
         {
             Label lb = (Label)sender;
@@ -100,6 +100,7 @@ namespace Game_2
                         {
                             One.Visible = false;
                             Two.Visible = false;
+                            jishu--;
                         }
                         else
                         {
@@ -153,6 +154,7 @@ namespace Game_2
             InitControl();
             One = new Label();
             Two = new Label();
+            timer1.Enabled = true;
             for (int i = 0; i < 9; i++)
             {
                 for (int j = 0; j < 16; j++)
@@ -175,6 +177,22 @@ namespace Game_2
                 lab.Visible = false;
             }
             label1.Visible = true;
+            label2.Visible = true;
+            timer1.Enabled = false;
+            label2.Text = "time:";
+            time = 0;
+            jishu = 49;
+        }
+        int time = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            time++;
+            label2.Text = "time:" + time / 10.0;
+            if (jishu==0)
+            {
+                timer1.Enabled = false;
+                MessageBox.Show("你赢了，用时：" + time / 10.0 + "s");
+            }
         }
 
         #region 寻找通路
